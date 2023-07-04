@@ -10,6 +10,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class post extends Model
 {
+
+    protected $fillable = [
+        'title',
+        'full_img',
+        'video',
+        'detail',
+        'tags'
+    ];
+
     use HasFactory;
     protected $primary_key='post_id';
 
