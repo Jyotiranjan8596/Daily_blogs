@@ -10,6 +10,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class comments extends Model
 {
+    protected $fillable = [
+        'id',
+        'post_id',
+        'comment',
+        'created_at',
+        'updated_at'
+
+    ];
+
     use HasFactory;
 
     public function user(){

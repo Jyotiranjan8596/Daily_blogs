@@ -75,21 +75,23 @@ class Comments_Controller extends Controller
         $input= $request->all();
         $validation= Validator::make($input,[
 
-            'comments'=>'required'
+            'comment'=>'required'
         ]);
 
         if($validation->fails()){
             return response()->json(['error'=>$validation->errors()], 422);
         }
         else{
-            $db_result= comments::find($id);
-            $db_result->comment= $request['comments'];
-            $db_result->save();
-            if($db_result->success()){
+            $db_result=comments::where('comment_id',$id)->update(
+                $request->all()
+
+            );
+
+            if($db_result){
                 return response()->json(['message'=>"Your Comment successfully updated"], 200);
             }
             else{
-                return response()->json(['error'=>"Failed to Update check your code again"], 422);
+                return response()->json(['error'=>"Invalid Id"], 422);
 
 
             }
@@ -101,7 +103,7 @@ class Comments_Controller extends Controller
 
       function delete_comment($id){
 
-        $delete=comments::find($id);
+        $delete=comments::where('comment_id',$id);
         if($delete)
         {
             $delete->delete();

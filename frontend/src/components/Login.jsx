@@ -69,7 +69,7 @@ export default function Login() {
               <Link to="/forgotpassword" ><p>Forgot Password</p></Link>
             </div>
             <div className='inline-block float-right text-gray-400 py-2  '>
-              <p>not a member?</p>
+            <Link to="/register" ><p>register</p></Link>
             </div>
 
 

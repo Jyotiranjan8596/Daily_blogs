@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axios from "axios";
-import { Link, Navigate, useNavigate } from 'react-router-dom';
+import { Link} from 'react-router-dom';
 
 export default function Introblogs() {
 
@@ -32,7 +32,7 @@ export default function Introblogs() {
       {post?.posts?.map((item, index) => (
         <div key={index} className='m-4 cursor-pointer'  >
           <Link to={'posts/'+item.post_id}>
-          <img src={`http://localhost:8000${item?.full_img}`} className='w-full rounded-2xl
+          <img src={`http://localhost:8000${item?.full_img}`} alt='cover-img' className='w-full rounded-2xl
            object-cover h-[200px]'/>
           <h3 className='text-red-500 mt-3'>{item.tags}</h3>
           <h3 className='font-bold mt-3'>{item.title}</h3>

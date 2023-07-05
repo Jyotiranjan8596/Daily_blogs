@@ -21,11 +21,12 @@ export default function Header() {
       <ul className='flex gap-4 md:gap-12'>
         <li className='hover:font-bold hover:text-red-900 font-red cursor-pointer'>
           <Link to="/">Home</Link></li>
-        <li className='hover:font-bold hover:text-red-900 cursor-pointer'>
-          <Link to="/blogs">Blogs</Link></li>
+        
         <li className='hover:font-bold hover:text-red-900 cursor-pointer'>
           <Link to={"/createpost"}>New Blog</Link>
         </li>
+        <li className='hover:font-bold hover:text-red-900 cursor-pointer'>
+          <Link to="/blogs">Contact Us</Link></li>
       </ul>
 
       {localStorage.getItem('user-info') ?
