@@ -5,11 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Validator;
-
-use function PHPUnit\Framework\isNull;
+use Illuminate\Support\Facades\Validator;use function PHPUnit\Framework\isNull;
 
 class UserAuthcontroller extends Controller
 {

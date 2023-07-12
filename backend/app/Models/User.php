@@ -48,8 +48,9 @@ class User extends Authenticatable implements FilamentUser
 
     function get_user_posts(){
 
-        return $this->hasMany('App\Models\post','id');
+        return $this->hasMany('App\Models\post','carts_userId');
     }
+
     public function canAccessFilament(): bool
     {
         return str_ends_with($this->email, '@gmail.com') && $this->hasVerifiedEmail();
